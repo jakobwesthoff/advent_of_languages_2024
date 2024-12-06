@@ -1,0 +1,63 @@
+to init :height
+  clearscreen
+  penup
+  forward :height
+  right 180
+  pendown
+end
+
+to top_left :len
+  repeat :len [
+    right 30
+    forward 50
+    left 30
+    left 90
+    forward 10
+    right 90
+  ]
+end
+
+to top_right :len
+  repeat :len [
+    left 30
+    forward 50
+    right 30
+    right 90
+    forward 10
+    left 90
+  ]
+end
+
+to trunk :y
+  penup
+  setpos list 0 :y
+  pendown
+  filled [255 0 0] [
+    left 90
+    forward 30
+    right 90
+    forward 80
+    right 90
+    forward 60
+    right 90
+    forward 80
+    right 90
+    forward 30
+  ]
+end
+
+to tree :len
+  init 300
+  filled [0 255 0] [
+    localmake "top_origin pos
+    top_left :len
+    localmake "bottom_left_end pos
+    penup
+    setpos :top_origin
+    pendown
+    top_right :len
+    setpos :bottom_left_end
+  ]
+  trunk ycor
+end
+
