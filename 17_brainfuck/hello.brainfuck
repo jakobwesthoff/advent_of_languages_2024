@@ -1,0 +1,60 @@
+temp0-10
+>>>>>>>>>>
+11: groups = 3 >+++
+12: Newline   0x0a  10 >++++++++++
+13: Slash     0x2f  47 >+++++++++++++++++++++++++++++++++++++++++++++++
+14: Backslash 0x5c  92 >++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+15: Dash      0x2d  45 >+++++++++++++++++++++++++++++++++++++++++++++
+16: Pipe      0x7c 124 >++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+17: Space     0x20  32 >++++++++++++++++++++++++++++++++
+<<<<<<<
+
+store groups at temp7 via temp8 >[-<<<+<+>>>>]<<<[->>>+<<<]>>
+
+>[<
+  line 1 of group
+
+  copy groups to temp10 via temp9 >[-<+<+>>]<<[->>+<<]>
+  print temp10 spaces [->>>>>>>.<<<<<<<] 
+  print space >>>.<<<
+  copy temp7 (length) to temp10 via temp9 <<<[->>+>+<<<]>>><[-<<+>>]>
+  copy groups to temp9 via temp8 >[-<<+<+>>>]<<<[->>>+<<<]>>
+  substract temp9 from temp10 <[->-<]>
+  multiply temp10 by 2 via temp9 [-<++>]<[->+<]>
+  iteration count times 2 in temp10
+  print inner spaces from temp10 [->>>>>>>.<<<<<<<]
+  print backslash >>>>.<<<<
+  print newline >>.<<
+
+  line 2 of group
+
+  copy groups to temp10 via temp9 >[-<+<+>>]<<[->>+<<]>
+  spaces minus one -
+  print temp10 spaces [->>>>>>>.<<<<<<<] 
+  print space >>>.<<<
+  copy temp7 (length) to temp10 via temp9 <<<[->>+>+<<<]>>><[-<<+>>]>
+  copy groups to temp9 via temp8 >[-<<+<+>>>]<<<[->>>+<<<]>>
+  substract temp9 from temp10 <[->-<]>
+  add one to iteration value in temp10 +
+  multiply temp10 by 2 via temp9 [-<++>]<[->+<]>
+  iteration count times 2 in temp10
+  print inner spaces from temp10 [->>>>>>>.<<<<<<<]
+  print backslash >>>>.<<<<
+  print newline >>.<<
+  >-
+]<
+
+copy temp7 (length) to temp10 via temp9 <<<[->>+>+<<<]>>><[-<<+>>]>
+multiply temp10 by 2 via temp9 [-<++>]<[->+<]>
+add two to temp10 ++
+print dashes amount of temp10 [->>>>>.<<<<<]
+print newline >>.<<
+loop 2 times via temp9 <++[->
+  copy temp7 (length) to temp10 via temp8 <<<[->+>>+<<<]>[-<+>]>>
+  print temp10 spaces [->>>>>>>.<<<<<<<] 
+  print pipe two times ++[->>>>>>.<<<<<<]
+  print temp10 spaces [->>>>>>>.<<<<<<<] 
+  print newline >>.<<
+<]>
+
+>>.<<
